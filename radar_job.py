@@ -7,7 +7,7 @@ url = 'https://mrms.ncep.noaa.gov/data/2D/MergedReflectivityQCComposite/latest.g
 download_path = '/tmp/latest.grib2.gz'
 unzipped_path = '/tmp/latest.grib2'
 warped_path = '/tmp/latest_3857.tif'
-png_path = '/render/public/latest.png'  # Render serves files from /render/public
+png_path = 'render/public/latest.png'  # Render serves files from /render/public
 
 # Download radar file
 print("Downloading radar data...")
