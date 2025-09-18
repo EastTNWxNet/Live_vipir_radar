@@ -1,40 +1,11 @@
-name: Live Viper Radar Job
+name: YAML Sanity Check
 
 on:
-  schedule:
-    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 jobs:
-  run-radar:
+  test:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Install dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y gdal-bin
-          pip install requests
-
-      - name: Create render/public folder
-        run: mkdir -p render/public
-
-      - name: Run radar job
-        run: python radar_job.py
-
-      - name: Upload to AeonFree via FTP
-        uses: sebastianpopp/ftp-action@v1.1.0
-        with:
-          host: ${{ secrets.FTP_HOST }}
-          user: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASS }}
-          localDir: render/public
-          remoteDir: ${{ secrets.FTP_PATH }}
+      - name: Echo
+        run: echo "Hello from Live Viper"
