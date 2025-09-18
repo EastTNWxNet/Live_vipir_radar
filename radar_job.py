@@ -39,4 +39,6 @@ subprocess.run([
     '-alpha'
 ])
 
-print("Radar image saved to:", png_path)
+print("Radar image saved to:", png_path
+import os
+os.makedirs('render/public', exist_ok=True)
