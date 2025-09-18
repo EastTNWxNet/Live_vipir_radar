@@ -24,6 +24,9 @@ jobs:
           sudo apt-get install -y gdal-bin
           pip install requests
 
+      - name: Create render/public folder
+        run: mkdir -p render/public
+
       - name: Run radar job
         run: python radar_job.py
 
@@ -33,5 +36,5 @@ jobs:
           host: ${{ secrets.FTP_HOST }}
           user: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
-          localDir: ./render/public
+          localDir: render/public
           remoteDir: ${{ secrets.FTP_PATH }}
