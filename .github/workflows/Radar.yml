@@ -35,3 +35,6 @@ jobs:
           password: ${{ secrets.FTP_PASS }}
           localDir: ./render/public
           remoteDir: ${{ secrets.FTP_PATH }}
+
+          - name: Ensure render/public folder exists
+        run: mkdir -p render/public
