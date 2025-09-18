@@ -27,11 +27,11 @@ jobs:
       - name: Run radar job
         run: python radar_job.py
 
-      - name: Upload to AeonFree via FTP
+     - name: Upload to AeonFree via FTP
         uses: sebastianpopp/ftp-action@v1.1.0
         with:
           host: ${{ secrets.FTP_HOST }}
           user: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASS }}
           localDir: ./render/public
-          remoteDir: ${{ secrets.FTP_PATH }}
+          remoteDir: ${{ secrets.FTP_PATH }} 
